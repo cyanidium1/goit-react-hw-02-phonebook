@@ -9,9 +9,6 @@ class Contact extends Component {
     fontWeight: 400,
   };
 
-  changeIt() {}
-
-  // return <div style={style}> Have a good and productive day! </div>;
   render() {
     return (
       <li className={css.item}>
@@ -21,12 +18,17 @@ class Contact extends Component {
         <p className={css.tel} style={this.state}>
           {this.props.props.tel}
         </p>
-        <button onClick={this.props.deleteItem} className={css.btn}>
-          <img src={del} width="15px" />
+        <button
+          onClick={e => {
+            this.props.deleteItem(this.props.props.id);
+          }}
+          className={css.btn}
+        >
+          <img src={del} width="15px" alt="notadickpic" />
         </button>
         <button
           onClick={() => {
-            if (this.state.fontWeight == '400') {
+            if (this.state.fontWeight === 400) {
               this.setState({
                 backgroundColor: 'red',
                 fontWeight: 700,
@@ -42,7 +44,7 @@ class Contact extends Component {
           }}
           className={css.btn}
         >
-          <img src={im} width="15px" />
+          <img src={im} width="15px" alt="notadickpic" />
         </button>
       </li>
     );
