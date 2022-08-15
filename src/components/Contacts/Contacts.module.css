@@ -3,3 +3,17 @@
   margin: 0;
   padding: 0;
 }
+.head {
+  width: 340px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.disclaimer {
+  font-size: 8px;
+  width: 340px;
+  text-align: center;
+  color: gray;
+  margin: 0;
+  padding: 0;
+}

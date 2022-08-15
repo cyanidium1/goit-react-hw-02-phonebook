@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Adder from './Adder/Adder';
 import Contacts from './Contacts/Contacts';
+import Kek from './SeniorCodingExamples/SeniorCodingExamples';
 
 export class App extends Component {
   state = {
@@ -51,6 +52,7 @@ export class App extends Component {
       <>
         <Contacts deleteItem={this.deleteItem} props={this.state.book} />
         <Adder kek="kek" addItem={this.addItem} />
+        <Kek />
       </>
     );
   }

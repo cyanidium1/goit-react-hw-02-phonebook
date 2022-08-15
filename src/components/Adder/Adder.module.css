@@ -20,4 +20,9 @@
   padding: 5px 10px;
   height: 30px;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(204, 176, 49);
 }
