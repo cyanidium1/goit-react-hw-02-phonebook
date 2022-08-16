@@ -1,14 +1,24 @@
 import Contact from 'components/Contact/Contact';
 import css from './Contacts.module.css';
 
-const Contacts = ({ props, deleteItem }) => {
+const Contacts = ({ props, deleteItem, search }) => {
+  console.log(search);
+  if (search === '') {
+    return (
+      <div className={css.list}>
+        {props.map(el => (
+          <Contact props={el} key={el.id} deleteItem={deleteItem} />
+        ))}
+      </div>
+    );
+  }
   return (
     <div className={css.list}>
-      <h2 className={css.head}>Phone book</h2>
-      <p className={css.disclaimer}>use it on your own risk</p>
-      {props.map(el => (
-        <Contact props={el} key={el.id} deleteItem={deleteItem} />
-      ))}
+      {props.map(el =>
+        el.name.toLowerCase().includes(search.toLowerCase()) ? (
+          <Contact props={el} key={el.id} deleteItem={deleteItem} />
+        ) : null
+      )}
     </div>
   );
 };

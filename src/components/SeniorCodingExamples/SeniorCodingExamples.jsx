@@ -28,7 +28,13 @@ class Kek extends Component {
         >
           {this.state.text}
         </button>
-        <img src={kek} alt="kek" style={this.state} width="340px" />
+        <img
+          src={kek}
+          alt="kek"
+          style={this.state}
+          width="420px"
+          className={css.gif}
+        />
       </>
     );
   }

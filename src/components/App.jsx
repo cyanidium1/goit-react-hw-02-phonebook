@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Adder from './Adder/Adder';
 import Contacts from './Contacts/Contacts';
+import Searcher from './Searcher/Searcher';
 import Kek from './SeniorCodingExamples/SeniorCodingExamples';
 
 export class App extends Component {
@@ -12,6 +13,7 @@ export class App extends Component {
       { name: 'Johny', tel: 'они на деревьях', id: 3 },
       { name: 'Kenny', tel: 'dead', id: 4 },
     ],
+    name: '',
   };
 
   deleteItem = id => {
@@ -24,6 +26,11 @@ export class App extends Component {
   };
 
   addItem = (name, tel) => {
+    const names = [...this.state.book].map(el => el.name);
+    if (names.includes(name)) {
+      alert('Already exists');
+      return;
+    }
     if (name && tel) {
       const contact = {
         name: name,
@@ -47,10 +54,21 @@ export class App extends Component {
     }
   };
 
+  searchItem = input => {
+    this.setState({
+      name: input,
+    });
+  };
+
   render() {
     return (
       <>
-        <Contacts deleteItem={this.deleteItem} props={this.state.book} />
+        <Searcher searchItem={this.searchItem} />
+        <Contacts
+          deleteItem={this.deleteItem}
+          props={this.state.book}
+          search={this.state.name}
+        />
         <Adder kek="kek" addItem={this.addItem} />
         <Kek />
       </>

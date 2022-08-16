@@ -3,7 +3,7 @@
   flex-direction: row;
 }
 .item {
-  width: 100px;
+  width: 150px;
   background-color: rgb(255, 220, 65);
   margin: 10px;
   box-sizing: border-box;
