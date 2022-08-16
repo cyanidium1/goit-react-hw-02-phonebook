@@ -2,7 +2,6 @@ import Contact from 'components/Contact/Contact';
 import css from './Contacts.module.css';
 
 const Contacts = ({ props, deleteItem, search }) => {
-  console.log(search);
   if (search === '') {
     return (
       <div className={css.list}>
