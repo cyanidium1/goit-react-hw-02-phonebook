@@ -68,7 +68,7 @@ export class App extends Component {
           deleteItem={this.deleteItem}
           search={this.state.filter}
         />
-        <Adder kek="kek" addItem={this.addItem} />
+        <Adder addItem={this.addItem} />
         <Kek />
       </>
     );

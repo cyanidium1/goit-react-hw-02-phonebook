@@ -11,17 +11,18 @@ class Contact extends Component {
   };
 
   render() {
+    const { name, id, tel } = this.props.telBook;
     return (
       <li className={css.item}>
         <p className={css.name} style={this.state}>
-          {this.props.telBook.name}
+          {name}
         </p>
         <p className={css.tel} style={this.state}>
-          {this.props.telBook.tel}
+          {tel}
         </p>
         <button
           onClick={e => {
-            this.props.deleteItem(this.props.telBook.id);
+            this.props.deleteItem(id);
           }}
           className={css.btn}
         >
@@ -53,7 +54,11 @@ class Contact extends Component {
 }
 
 Contact.propTypes = {
-  telBook: PropTypes.object,
+  telBook: PropTypes.shape({
+    name: PropTypes.string,
+    tel: PropTypes.string,
+    id: PropTypes.number,
+  }),
   deleteItem: PropTypes.func,
 };
 
