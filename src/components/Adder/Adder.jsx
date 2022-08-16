@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import css from './Adder.module.css';
+import PropTypes from 'prop-types';
 
 class Adder extends Component {
   render() {
@@ -37,5 +38,9 @@ class Adder extends Component {
     );
   }
 }
+
+Adder.propTypes = {
+  addItem: PropTypes.func.isRequired,
+};
 
 export default Adder;

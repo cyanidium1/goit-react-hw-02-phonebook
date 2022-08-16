@@ -2,6 +2,7 @@ import css from './Contact.module.css';
 import im from './1.png';
 import del from './del.png';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Contact extends Component {
   state = {
@@ -13,14 +14,14 @@ class Contact extends Component {
     return (
       <li className={css.item}>
         <p className={css.name} style={this.state}>
-          {this.props.props.name}
+          {this.props.telBook.name}
         </p>
         <p className={css.tel} style={this.state}>
-          {this.props.props.tel}
+          {this.props.telBook.tel}
         </p>
         <button
           onClick={e => {
-            this.props.deleteItem(this.props.props.id);
+            this.props.deleteItem(this.props.telBook.id);
           }}
           className={css.btn}
         >
@@ -50,5 +51,10 @@ class Contact extends Component {
     );
   }
 }
+
+Contact.propTypes = {
+  telBook: PropTypes.object,
+  deleteItem: PropTypes.func,
+};
 
 export default Contact;

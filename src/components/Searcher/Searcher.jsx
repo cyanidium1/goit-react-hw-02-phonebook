@@ -1,4 +1,5 @@
 import css from './Searcher.module.css';
+import PropTypes from 'prop-types';
 
 const Searcher = ({ searchItem }) => {
   return (
@@ -13,6 +14,10 @@ const Searcher = ({ searchItem }) => {
       />
     </>
   );
+};
+
+Searcher.propTypes = {
+  searchItem: PropTypes.func,
 };
 
 export default Searcher;

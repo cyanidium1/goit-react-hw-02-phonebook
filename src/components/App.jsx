@@ -13,7 +13,7 @@ export class App extends Component {
       { name: 'Johny', tel: 'они на деревьях', id: 3 },
       { name: 'Kenny', tel: 'dead', id: 4 },
     ],
-    name: '',
+    filter: '',
   };
 
   deleteItem = id => {
@@ -46,7 +46,6 @@ export class App extends Component {
       };
       this.setState(state => {
         const newSt = [...state.book, contact];
-        console.log(newSt);
         return { book: newSt };
       });
     } else {
@@ -56,7 +55,7 @@ export class App extends Component {
 
   searchItem = input => {
     this.setState({
-      name: input,
+      filter: input,
     });
   };
 
@@ -65,9 +64,9 @@ export class App extends Component {
       <>
         <Searcher searchItem={this.searchItem} />
         <Contacts
+          telBook={this.state.book}
           deleteItem={this.deleteItem}
-          props={this.state.book}
-          search={this.state.name}
+          search={this.state.filter}
         />
         <Adder kek="kek" addItem={this.addItem} />
         <Kek />
